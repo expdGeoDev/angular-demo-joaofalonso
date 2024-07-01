@@ -4,11 +4,12 @@ import { Coffee, RoastType, GroundOrBeans } from '../../data/coffee-data';
 import { UIRouter } from '@uirouter/angular';
 import { CoffeeDataService } from '../coffee-data.service';
 import { CommonModule } from '@angular/common';
+import { CoffeeNotificationComponent } from '../coffee-notification/coffee-notification.component';
 
 @Component({
   selector: 'app-add-coffee-form',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, CoffeeNotificationComponent],
   templateUrl: './add-coffee-form.component.html',
   styleUrl: './add-coffee-form.component.css'
 })
