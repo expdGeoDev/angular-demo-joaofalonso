@@ -21,4 +21,12 @@ export class CoffeeDataService {
 	findByBrand(brandName: string): Coffee[] | undefined {
 		return this.coffeeData.filter((coffee) => coffee.brand === brandName);
 	}
+
+	private validateCoffee(coffee : Coffee){
+
+	}
+	addCoffee(coffee : Coffee){
+		this.coffeeData.push(coffee);
+		console.log('Coffee inserted!')
+	}
 }

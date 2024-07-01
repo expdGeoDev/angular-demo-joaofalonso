@@ -1,32 +1,39 @@
+export enum RoastType {
+	Light = 'Light',
+	Medium = 'Medium',
+	Dark = 'Dark'
+}
+
 export const coffeeData: Coffee[] = [
 	{
 		id: 1,
 		brand: 'Kicking Horse',
-		roast: 'dark',
+		roast: RoastType.Dark,
 		groundOrBeans: 'beans',
 	},
 	{
 		id: 2,
 		brand: 'Greenwood Lake Roasters',
-		roast: 'medium',
+		roast: RoastType.Medium,
 		groundOrBeans: 'ground',
 	},
 	{
 		id: 3,
 		brand: 'Counter Culture',
-		roast: 'light',
+		roast: RoastType.Light,
 		groundOrBeans: 'beans',
 	},
 	{
 		id: 4,
 		brand: 'Starbucks',
-		roast: 'medium',
+		roast: RoastType.Medium,
 		groundOrBeans: 'ground',
 	},
 ];
 
-type RoastType = 'light' | 'medium' | 'dark';
-type GroundOrBeans = 'ground' | 'beans';
+
+// export type RoastType = 'light' | 'medium' | 'dark'| undefined;
+export type GroundOrBeans = 'ground' | 'beans' | undefined;
 
 export interface Coffee {
 	id: number;
