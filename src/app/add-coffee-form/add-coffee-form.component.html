@@ -1,3 +1,4 @@
+<h1>Create a new Coffee Brand</h1>
 <app-coffee-details [coffee]="coffee" 
     (coffeeAdded)="createNewCoffee(coffee)">
 </app-coffee-details>
@@ -6,4 +7,6 @@
     <label>Brand: {{coffee.brand}}</label><br/>
     <label>Ground or Beans: {{coffee.groundOrBeans}}</label><br/>
     <label>Roast: {{coffee.roast}}</label><br/>
+    <label>Single Origin: {{coffee.singleOrigin}}</label><br/>
+    <label>Flavor Notes: {{coffee.flavorNotes}}</label><br/>
 </div>

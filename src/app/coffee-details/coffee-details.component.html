@@ -1,9 +1,9 @@
 <form #newCoffeeForm="ngForm" (ngSubmit)="submitButtonClicked(coffee)">
-    <div>
+    <div style="padding-bottom: 10px;">
         <label style="padding-right: 5px;">Brand</label>
-        <input name="Brand" required [(ngModel)]="coffee.brand" placeholder="Input the coffee brand" type="text" size="70px"/>    
+        <input name="Brand" #brand="ngModel" required [(ngModel)]="coffee.brand" placeholder="Input the coffee brand" type="text" size="70px"/>    
     </div>
-    <div>
+    <div style="padding-bottom: 10px;">
         <div>
             <label style="padding-right: 5px;">Coffee Type : </label>
             <label>Ground</label>
@@ -14,15 +14,22 @@
             [(ngModel)]="coffee.groundOrBeans" type ="radio">
         </div>
     </div>
-    <div>
+    <div style="padding-bottom: 10px;">
         <label style="padding-right: 5px;">Roast Type</label>
         <select id="roastType" name="roastType" type="select" [(ngModel)]="coffee.roast" required>
             <option *ngFor="let type of roastOptions" [value]="type">{{type}}</option>
         </select>
     </div>
-    <div class="buttons">
-        
-        <button type="submit" name="Submit">Submit</button>
+    <div style="padding-bottom: 10px;">
+        <label style="padding-right: 5px;">Single Origin</label>
+        <input type="checkbox" name="chksingleOrigin" [(ngModel)] = "coffee.singleOrigin"/>
     </div>
-    <button type="button" name="Reset" (click)="newCoffeeForm.resetForm()">Reset</button>
+    <div style="padding-bottom: 10px;">
+        <label style="padding-right: 5px;">Flavor Notes</label>
+        <textarea name="txtflavo"[(ngModel)]="coffee.flavorNotes"></textarea>
+    </div>
+    <div class="buttons">
+        <button type="submit" [disabled]="newCoffeeForm.form.invalid" name="Submit">Submit</button>
+        <button type="button" name="Reset" (click)="newCoffeeForm.resetForm()">Reset</button>
+    </div>
 </form>
