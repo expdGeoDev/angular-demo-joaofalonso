@@ -1,29 +1,9 @@
-<form #newCoffeeForm="ngForm" (ngSubmit)="createNewCoffee()">
-    <div>
-        <label style="padding-right: 5px;">Brand</label>
-        <input name="Brand" required [(ngModel)]="newCoffee.brand" placeholder="Input the coffee brand" type="text" size="70px"/>    
-    </div>
-    <div>
-        <div>
-            <label style="padding-right: 5px;">Coffee Type : </label>
-            <label>Ground</label>
-            <input name="Ground or Beans" required placeholder="Ground or Beans" value="ground"
-            [(ngModel)]="newCoffee.groundOrBeans" type ="radio" title="Ground">
-            <label style="padding-left: 5px;" >Beans</label>
-            <input name="Ground or Beans" required placeholder="Ground or Beans" value="beans" 
-            [(ngModel)]="newCoffee.groundOrBeans" type ="radio">
-        </div>
-    </div>
-    <div>
-        <label style="padding-right: 5px;">Roast Type</label>
-        <select id="roastType" name="roastType" type="select" [(ngModel)]="newCoffee.roast" required>
-            <option *ngFor="let type of roastOptions" [value]="type">{{type}}</option>
-        </select>
-    </div>
-    <div class="buttons">
-        
-        <button type="submit" name="Submit">Submit</button>
-    </div>
-    <button type="button" name="Reset" (click)="newCoffeeForm.resetForm()">Reset</button>
-    <app-coffee-notification></app-coffee-notification>
-</form>
+<app-coffee-details [coffee]="coffee" 
+    (coffeeAdded)="createNewCoffee(coffee)">
+</app-coffee-details>
+<div *ngIf="msg">
+    <label>New Coffee Added</label><br/>
+    <label>Brand: {{coffee.brand}}</label><br/>
+    <label>Ground or Beans: {{coffee.groundOrBeans}}</label><br/>
+    <label>Roast: {{coffee.roast}}</label><br/>
+</div>

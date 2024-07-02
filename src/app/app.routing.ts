@@ -8,7 +8,6 @@ import { ServicesDemoComponent } from './services-demo/services-demo.component';
 import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.component';
 import { CustomGreetingComponent } from './custom-greeting/custom-greeting.component';
 import { AddCoffeeFormComponent } from './add-coffee-form/add-coffee-form.component';
-import { CoffeeNotificationComponent } from './coffee-notification/coffee-notification.component';
 
 // Technically the type is Ng2StateDeclaration[]
 export const routerStates = [
@@ -72,10 +71,5 @@ export const routerStates = [
 		component: AddCoffeeFormComponent,
 		label: 'Add Coffee',
 	},
-	{
-		name: 'app-add-coffee-form',
-		url: '/app-add-coffee-form',
-		component: CoffeeNotificationComponent,
-		label: 'Coffee Notification',
-	},
+
 ];
